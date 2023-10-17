@@ -14,9 +14,9 @@
  */
 void int_to_str(int n, char s[], int base)
 {
-	int i, sign;
+	int i, sign = n;
 
-	if ((sign = n) < 0)
+	if (sign < 0)
 		n = -n;
 
 	i = 0;
@@ -40,6 +40,7 @@ void reverse(char s[])
 {
 	int i, j;
 	char c;
+
 	for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
 	{
 		c = s[i];

@@ -26,9 +26,9 @@ int print_format(char ch, va_list args)
 	if (ch == '%')
 		count = write(1, "%", 1);
 	if (ch == 'd')
-	        count = print_integer(va_arg(args, int), 10);
+	count = print_integer(va_arg(args, int), 10);
 	if (ch == 'i')
-	        count = print_integer(va_arg(args, int), 10);
+	count = print_integer(va_arg(args, int), 10);
 
 	return (count);
 }
@@ -81,7 +81,7 @@ int print_integer(int num, int base)
 	int count = 0, len;
 	char numStr[12];
 
-	int_to_str(num, numStr,base);
+	int_to_str(num, numStr, base);
 	len = strlen(numStr);
 	write(1, numStr, len);
 	count = count + len;
