@@ -20,10 +20,8 @@ int print_format(char ch, va_list args)
 
 	if (ch == 'c')
 		count = print_character(va_arg(args, int));
-	else if (ch == 's')
+	if (ch == 's')
 		count = print_string(va_arg(args, char *));
-	else
-		count = write(1, &ch, 1);
 
 	return (count);
 }
