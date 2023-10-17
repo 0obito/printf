@@ -22,6 +22,8 @@ int print_format(char ch, va_list args)
 		count = print_character(va_arg(args, int));
 	if (ch == 's')
 		count = print_string(va_arg(args, char *));
+	if (ch == '%')
+		count = write(1, "%", 1);
 
 	return (count);
 }
