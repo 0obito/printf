@@ -104,7 +104,7 @@ int print_binary(unsigned int numb)
 	if (numb > 1)
 		print_binary(numb / 2);
 
-	count += print_character(numb % 2);
+	count += print_integer(numb % 2, 10);
 
 	return (count);
 }
