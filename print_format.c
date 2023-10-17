@@ -30,7 +30,7 @@ int print_format(char ch, va_list args)
 	if (ch == 'i')
 		count = print_integer(va_arg(args, int), 10);
 	if (ch == 'b')
-		count = print_binary(va_arg(args, int));
+		count = print_binary(va_arg(args, int), 0);
 
 	return (count);
 }
@@ -97,14 +97,12 @@ int print_integer(int num, int base)
  *
  * Return: number of digits printed.
  */
-int print_binary(unsigned int numb)
+int print_binary(unsigned int numb, int count)
 {
-	int count = 0;
-
 	if (numb > 1)
-		print_binary(numb / 2);
+		count = print_binary(numb / 2, count);
 
-	count += print_integer(numb % 2, 10);
+	print_integer(numb % 2, 10);
 
-	return (count);
+	return (count + 1);
 }
