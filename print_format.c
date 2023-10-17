@@ -82,7 +82,7 @@ int print_integer(int num, int base)
 	int count = 0, len;
 	char numStr[12];
 
-	int_to_str(num, numStr,base);
+	int_to_str(num, numStr, base);
 	len = strlen(numStr);
 	write(1, numStr, len);
 	count = count + len;
