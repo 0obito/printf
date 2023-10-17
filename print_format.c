@@ -25,7 +25,7 @@ int print_format(char ch, va_list args)
 	else
 		count = write(1, &ch, 1);
 
-	return count;
+	return (count);
 }
 
 /**
@@ -60,5 +60,5 @@ int print_string(char *string)
 		string++;
 	}
 
-	return count;
+	return (count);
 }
