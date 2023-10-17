@@ -29,6 +29,8 @@ int print_format(char ch, va_list args)
 		count = print_integer(va_arg(args, int), 10);
 	if (ch == 'i')
 		count = print_integer(va_arg(args, int), 10);
+	if (ch == 'b')
+		count = print_binary(va_arg(args, int));
 
 	return (count);
 }
@@ -84,6 +86,25 @@ int print_integer(int num, int base)
 	len = strlen(numStr);
 	write(1, numStr, len);
 	count = count + len;
+
+	return (count);
+}
+
+/**
+ * print_binary - prints a decimal in binary.
+ *
+ * @numb: the integer to be printed in binary.
+ *
+ * Return: number of digits printed.
+ */
+int print_binary(unsigned int numb)
+{
+	int count = 0;
+
+	if (numb > 1)
+		print_binary(numb / 2);
+
+	count += print_character(numb % 2);
 
 	return (count);
 }
