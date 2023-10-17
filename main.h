@@ -11,6 +11,7 @@ int _printf(const char *format, ...);
 int print_format(char ch, va_list args);
 int print_character(int c);
 int print_string(char *str);
+int print_integer(int num, int base);
 
 void int_to_str(int n, char s[], int base);
 void reverse(char s[]);
