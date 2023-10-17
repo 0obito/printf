@@ -31,6 +31,14 @@ int print_format(char ch, va_list args)
 		count = print_integer(va_arg(args, int), 10);
 	if (ch == 'b')
 		count = print_binary(va_arg(args, int), 0);
+	if (ch == 'u')
+	        count = print_unsigned(va_arg(args, unsigned int));
+	if (ch == 'o')
+	        count = print_octal(va_arg(args, unsigned int));
+	if (ch == 'x')
+	        count = print_hex(va_arg(args, unsigned int), 0);
+	if (ch == 'X')
+	        count = print_hex(va_arg(args, unsigned int), 1);
 
 	return (count);
 }
