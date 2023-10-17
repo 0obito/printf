@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -26,9 +25,9 @@ int print_format(char ch, va_list args)
 	if (ch == '%')
 		count = write(1, "%", 1);
 	if (ch == 'd')
-	count = print_integer(va_arg(args, int), 10);
+		count = print_integer(va_arg(args, int), 10);
 	if (ch == 'i')
-	count = print_integer(va_arg(args, int), 10);
+		count = print_integer(va_arg(args, int), 10);
 
 	return (count);
 }
@@ -72,7 +71,6 @@ int print_string(char *string)
  * print_integer - prints an integer
  *
  * @num: the number to be printed.
- * @base: the number's base.
  *
  * Return: number of digits printed.
  */
@@ -81,7 +79,7 @@ int print_integer(int num, int base)
 	int count = 0, len;
 	char numStr[12];
 
-	int_to_str(num, numStr, base);
+	int_to_str(num, numStr,base);
 	len = strlen(numStr);
 	write(1, numStr, len);
 	count = count + len;
