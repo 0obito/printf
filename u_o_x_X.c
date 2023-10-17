@@ -34,7 +34,9 @@ int print_unsigned(unsigned int num)
  */
 int print_octal(unsigned int num)
 {
-	count = print_integer(num, 8);
+        int count;
+
+        count = print_integer(num, 8);
 
 	return (count);
 }

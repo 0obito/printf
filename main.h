@@ -17,4 +17,9 @@ int print_binary(unsigned int numb, int count);
 void int_to_str(int n, char s[], int base);
 void reverse(char s[]);
 
+int print_unsigned(unsigned int num);
+int print_octal(unsigned int num);
+int print_hex(unsigned int num, int uppercase);
+
+
 #endif /* MAIN_H */
