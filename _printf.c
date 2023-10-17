@@ -15,23 +15,23 @@
 
 int _printf(const char *format, ...)
 {
-    int sum = 0;
-    va_list args;
+	int sum = 0;
+	va_list args;
 
-    va_start(args, format);
-    while (*format != '\0')
-    {
-        if (*format == '%')
-        {
+	va_start(args, format);
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			format++;
+			sum += print_format(*format, args);
+		}
+		else
+			sum += write(1, format, 1);
+
 		format++;
-		sum += print_format(*format, args);
 	}
-	else
-		sum += write(1, format, 1);
 
-	format++;
-    }
-
-    va_end(args);
-    return sum;
+	va_end(args);
+	return sum;
 }

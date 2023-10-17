@@ -29,7 +29,7 @@ int print_format(char ch, va_list args)
 }
 
 /**
- * print_characters - prints a character.
+ * print_character - prints a character.
  *
  * @c: character to be printed.
  *
@@ -46,7 +46,7 @@ int print_character(int c)
 /**
  * print_string - prints a string.
  *
- * @s: string to be printed.
+ * @string: string to be printed.
  *
  * Return: number of characters printed.
  */
@@ -56,8 +56,9 @@ int print_string(char *string)
 
 	while (*string)
 	{
-	        count = count + write(1, string, 1);
+		count = count + write(1, string, 1);
 		string++;
 	}
+
 	return count;
 }
